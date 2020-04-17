@@ -177,6 +177,7 @@ socket.on('ready', function(users,hands){
 	addButton("buttons","shuff()","Shuffle","Shuffle");
 	addButton("buttons","discard()","Discard selected cards","dis");
 	addButton("buttons","discardToDeck()","Move the discard pile to the back of the deck","discardToDeck");
+	addButton("buttons","drawToDiscard()","Draw To Discard","dtdis");
 	addSwitch("switches","changeDiscardMode()","Change the discard mode","discardTogle");
 	addSwitch("switches","hidHands()","Hide/Show Other Peoples Hands","oHand");
 	addSwitch("switches","showInfo()","Show Info","showingoooo");
@@ -223,7 +224,9 @@ function hidHands() {
 function changeDiscardMode() {
 	socket.emit('changeDiscardMode');
 }
-
+function drawToDiscard() {
+	socket.emit('drawToDiscard');
+}
 socket.on('chat message', function(msg){
 	$('#messages').append($('<li class="chatMess">').text(msg));
 });
@@ -240,6 +243,8 @@ socket.on('leaveUser', function(users, h){
 socket.on('hidHands', function(users, h){
 	reFre(users, h)
 });
+
+
 
 socket.on('newUser', function(users, h){
 	reFre(users, h)

@@ -180,6 +180,14 @@ io.on('connection', function(socket){
 		}
 		
   });
+
+	socket.on('drawToDiscard', function(){
+		hands[roomNum][1].push(deck[roomNum][0]);
+		deck[roomNum].splice(0, 1);
+		deckSize(roomNum);
+		io.to(rooms[roomNum]).emit('draw',users[roomNum],hands[roomNum]);       
+	});
+
   socket.on('draw', function(){
 		for (i = 0; i < users[roomNum].length; i++) {
 			if (users[roomNum][i][0]==this.id){
