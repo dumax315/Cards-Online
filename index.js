@@ -180,12 +180,6 @@ io.on('connection', function(socket){
 		}
 		
   });
-	socket.on('discardToDeck', function(){
-		deck[roomNum] = deck[roomNum].concat(hands[roomNum][1]);
-		hands[roomNum][1] = [];
-		deckSize(roomNum);
-		io.to(rooms[roomNum]).emit('hidHands',users[roomNum],hands[roomNum]);
-  });
   socket.on('draw', function(){
 		for (i = 0; i < users[roomNum].length; i++) {
 			if (users[roomNum][i][0]==this.id){
