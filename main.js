@@ -196,7 +196,7 @@ function showInfo() {
 		infooo = false;
 	}
 	else {
-		document.getElementById("popup").style.display= "hidden";
+		document.getElementById("popup").style.visibility= "hidden";
 		infooo = true;
 	}
 }
