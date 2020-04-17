@@ -101,6 +101,7 @@ io.on('connection', function(socket){
   });
 
 	socket.on('changeRoom', function(newRoom){
+		console.log({users,newRoom})
 		username= arrayRemove(users, this.id, roomNum);
 		deckSize(roomNum);
 		socket.leave(rooms[roomNum]);
@@ -111,7 +112,7 @@ io.on('connection', function(socket){
 			socket.join(newRoom);
 			users.push([]);
 			deck.push([]);
-			hands.push([true,[]]);
+			hands.push([true, [], 0, 52, []]);
 			createDeck(roomNum);
 		}
 		else {
@@ -130,6 +131,8 @@ io.on('connection', function(socket){
 			
 		}
 		io.to(rooms[roomNum]).emit('newUser', users[roomNum],hands[roomNum])
+		console.log(users)
+		console.log(hands)
   });
 
 	socket.on('discard', function(discard,theirC){
