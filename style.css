@@ -28,6 +28,7 @@ button{
 	width:300px;
   text-decoration: none;
   margin: 4px 2px;
+	margin-right: 2%;
   cursor: pointer;
 }
 lu {
@@ -48,13 +49,20 @@ li {
 	border:2px solid red;
   text-decoration: none;
 }
+.sub_div { 
+	position: absolute; 
+	bottom: 0px; 
+} 
 #switches {
 	float:right;
 	width:20% ;
 	padding:3%;
 	display:none;
-	margin-right:3%;
+	margin-right:2%;
+	flex-flow: row wrap;
+	text-align: left;
 	background-color:antiquewhite;
+  
 
 }
 label {
@@ -69,6 +77,8 @@ label {
 	background-color: lightblue;
 	width:30%;
 	display:none;
+  flex-wrap: wrap;
+	margin-right:3%;
 }
 
 #sendChatButton {
@@ -76,25 +86,20 @@ label {
 }
 #nRoom {
 	float:right;
-	width:40%;
+	width:38%;
 	display:none;
-}
-@media screen and (max-width: 800px) {
-  #chat, #switches, #nRoom {
-    width: 100%;
-    padding: 0;
-		margin-right:0px;
-  }
+  flex-wrap: wrap;
 }
 .chatMess {
 	width:100%-3%;
 	padding-left: 3%;
 	text-align: left;
 	margin:0;
-
 	display:block;
+	
 }
 #messages {
+	width:100%;	
 	padding:0px;
 }
 #enterRo {
@@ -115,4 +120,9 @@ label {
   position: absolute;
   z-index: 1;
 	visibility: hidden;
+}
+
+#myFlexBox {
+  display: flex;
+  flex-wrap: wrap;
 }

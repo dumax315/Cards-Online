@@ -21,22 +21,25 @@
 		<div id="deck"></div>
     <div id="MCards"></div>
 		<div id="buttons"></div>
-		
-		<div id="chat">
-			<ul id="messages"></ul>
-			<form action="" id="sendChat" >
-				<input id="rr" autocomplete="off" /><button id="sendChatButton">Send Room Chat Message</button>
+		<form action="" id="nae" >
+				<input id="m" autocomplete="off" /><button>Enter name</button>
+		</form>
+		<div id="myFlexBox">
+			<div id="chat">
+				<ul id="messages"></ul>
+				<div class="sub-div">
+					<form action="" id="sendChat" >
+						<input id="rr" autocomplete="off" /><button id="sendChatButton">Send Room Chat Message</button>
+					</form>
+				</div>
+			</div>
+			<div id="switches"></div>
+			
+
+			<form action="" id="nRoom" >
+				<input id="g" autocomplete="off" /><button id="enterRo">Enter Room Code</button>
 			</form>
 		</div>
-		<div id="switches"></div>
-		<form action="" id="nae" >
-      <input id="m" autocomplete="off" /><button>Enter name</button>
-    </form>
-
-		<form action="" id="nRoom" >
-      <input id="g" autocomplete="off" /><button id="enterRo">Enter Room Code</button>
-    </form>
-		
 		<script src="/socket.io/socket.io.js"></script>
 		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 		<script src="main.js"></script>
