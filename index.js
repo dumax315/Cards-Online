@@ -14,7 +14,25 @@ function deckSize(rN){
 
 function createDeck(loc){
 	for (i = 0; i < 51; i++) {
-		deck[loc].push(((i%13)+1).toString());
+		if (i ==0){
+			deck[loc].push('A');
+		}
+		else if ((i%13)<10) {
+			deck[loc].push(((i%13)+1).toString());
+		}
+		else {
+			switch((i%13)-10){
+				case 0:
+					deck[loc].push('J');
+					break;
+				case 1:
+					deck[loc].push('Q');
+					break;
+				case 2:
+					deck[loc].push('K');
+					break;
+			}
+		}
 		switch(Math.floor(i/13)){
 			case 0:
 				deck[loc][i] += "H";
@@ -101,7 +119,6 @@ io.on('connection', function(socket){
   });
 
 	socket.on('changeRoom', function(newRoom){
-		console.log({users,newRoom})
 		username= arrayRemove(users, this.id, roomNum);
 		deckSize(roomNum);
 		socket.leave(rooms[roomNum]);
@@ -131,8 +148,6 @@ io.on('connection', function(socket){
 			
 		}
 		io.to(rooms[roomNum]).emit('newUser', users[roomNum],hands[roomNum])
-		console.log(users)
-		console.log(hands)
   });
 
 	socket.on('discard', function(discard,theirC){
