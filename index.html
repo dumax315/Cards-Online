@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>online cards</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+		<link href="switch.css" rel="stylesheet" type="text/css" />
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144635224-3"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-144635224-3');
+		</script>
+  </head>
+  <body>
+		<div id="popup" style="text-align:left;"><h3>Info:</h3><br>This website hopes to bring people together during quarantine. Each room has a deck of cards, a chat room, and a dealt area.<br><br> You can sellect you're cards and cards in the discard by clicking them. When you start a room the deck will not be shuffled and if you put the cards in the discard into the deck they will not be shuffled yet. You can diside whether to show/hid other users cards, this dissiousn will afect everyone in your room. The discard can show the top card or all cards, this dission will also affect everyone.<br><br> I hope people can find cool ways to use this site.</div>
+		<h2><p id="myRoom"></p></h2>
+		
+		<div id="deck"></div>
+    <div id="MCards"></div>
+		<div id="buttons"></div>
+		
+		<div id="chat">
+			<ul id="messages"></ul>
+			<form action="" id="sendChat" >
+				<input id="rr" autocomplete="off" /><button id="sendChatButton">Send Room Chat Message</button>
+			</form>
+		</div>
+		<div id="switches"></div>
+		<form action="" id="nae" >
+      <input id="m" autocomplete="off" /><button>Enter name</button>
+    </form>
+
+		<form action="" id="nRoom" >
+      <input id="g" autocomplete="off" /><button id="enterRo">Enter Room Code</button>
+    </form>
+		
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+		<script src="main.js"></script>
+  </body>
+</html>
