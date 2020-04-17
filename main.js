@@ -189,8 +189,16 @@ socket.on('ready', function(users,hands){
 function shuff() {
 	socket.emit('shuff');
 }
+var infooo = true;
 function showInfo() {
-	document.getElementById("").style.display= "block";
+	if(infooo){
+		document.getElementById("popup").style.visibility = "visible";
+		infooo = false;
+	}
+	else {
+		document.getElementById("popup").style.display= "hidden";
+		infooo = true;
+	}
 }
 function discardToDeck() {
 	socket.emit('discardToDeck');
